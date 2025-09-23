@@ -1,0 +1,23 @@
+{Batch}&{Date}&\shortstack{Number of \\ recipients}&\shortstack{Email \\opened}&\shortstack{Email \\ hard bounce}&\shortstack{Email \\ soft bounce}&\shortstack{Survey \\ started}&\shortstack{Survey \\finished}&\shortstack{Email \\ open rate}&\shortstack{Hard \\ bounce rate}&\shortstack{Soft \\ bounce rate}&\shortstack{Survey \\start rate}&\shortstack{Survey \\response rate} \tabularnewline
+\midrule \addlinespace[\belowrulesep]
+
+{Statement}&{Total}&{Percentage (\%)}&{Total}&{Percentage (\%)} &{Total}&{Percentage (\%)}&{Total}&{Percentage (\%)} \tabularnewline
+\midrule \addlinespace[\belowrulesep]
+
+%Gift card tracking table
+{Batch}&{Date}&{Platform}&\shortstack{Number of \\ recipients}&\shortstack{Compensation per \\ participants}&{Total amount}&{Updated balance} \tabularnewline
+
+\begin{table}[H]
+    \centering
+    \caption{Categorization of Medical Field by Physician Type: PCPs vs Specialists}
+    \begin{adjustbox}{width=0.75\linewidth} 
+    \begin{tabular}{lccccccc}\toprule & \multicolumn{2}{c}{Primary Care Physician} & \multicolumn{2}{c}{Specialist} & \multicolumn{2}{c}{Difficult to classify} & \multicolumn{1}{c}{All groups} \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(l){8}   
+    \input{Pre-Survey/tables/medical_fields_categorization_byphystype}
+    \end{tabular}
+    \end{adjustbox}
+    \label{tab:med_field_cat_phystype}
+          {\parbox{1\linewidth}{           %notes
+    		\scriptsize{{{ \textit{Notes:} The table displays statistics for the overall sample of physicians. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group.}}}}}
+\end{table}
+
+
