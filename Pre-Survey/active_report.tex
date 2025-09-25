@@ -1,0 +1,682 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[englisH]{babel}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{chicago}
+\usepackage[bottom]{footmisc}
+\usepackage{setspace}
+\usepackage[letterpaper]{geometry}
+\usepackage{graphicx}
+%\usepackage{subfigure}
+\usepackage{adjustbox}
+\usepackage{subcaption}
+\usepackage{dcolumn}
+\usepackage{floatrow}
+\usepackage{epigraph}
+\usepackage{environ}
+\usepackage{minitoc}
+\usepackage{comment}
+%Includes "References" in the table of contents
+\usepackage[nottoc]{tocbibind}
+\usepackage{datatool}
+
+%Import the natbib package and sets a bibliography style
+%\usepackage[square,numbers]{natbib}
+\usepackage{filecontents}
+\usepackage{multibib}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\newcites{supp}{ }
+
+\usepackage[landscape]{geometry}
+\usepackage{rotating}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage[final]{pdfpages}
+%\usepackage[hyphenbreaks]{breakurl}
+\usepackage{pdflscape}
+\usepackage{pdfpages}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+%\hypersetup{
+%    urlcolor=blue,
+%}
+%\usepackage[colorlinks=true, linkcolor=maroon, urlcolor=maroon, citecolor=maroon]{hyperref}
+\usepackage[numbered]{bookmark}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{qtree}
+\usetikzlibrary{snakes} 
+\usepackage{amsthm}
+\theoremstyle{definition}  
+\newtheorem{definition}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{assumption}{Assumption}
+\urlstyle{same}
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+\floatsetup[figure]{capposition=top}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{afterpage}
+\usepackage{paralist}
+\usepackage{colortbl}
+\newcommand{\indep}{\rotatebox[origin=c]{90}{$\models$}}
+\usepackage[table]{xcolor}
+\usepackage{appendix}
+\usepackage{placeins}
+\def\subsectionautorefname{Section}
+\def\subsectionautorefname{Section}
+\def\appendixautorefname{Appendix}
+%\newcommand*{\Appendixautorefname}{Appendix}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tgpagella}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\usepackage[toc,page,header]{appendix}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash}p{#1}}
+
+\setcounter{MaxMatrixCols}{30} 
+
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+
+
+\newcolumntype{d}[0]{D{.}{.}{5}}
+
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=0.8in,rmargin=0.8in}
+
+
+\doublespacing
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+\makeatletter
+%same as \subsection but level 4
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+% number \paragraph
+\setcounter{secnumdepth}{4}
+
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\singlespacing
+
+\noindent
+
+\begin{center}
+\LARGE{\textbf{Mock Monitoring Report for the Pre-Survey}}
+\break
+\break
+\today
+\normalsize
+\end{center}
+% \clearpage
+\vspace{.8cm}
+
+% \colorbox{yellow}{\textbf{Preview of Survey:} \href{https://harvard.az1.qualtrics.com/jfe/preview/previewId/1c54dd0d-b0c9-4176-ad48-0d399707c5df/SV_6hTTz50ZLuLrA9g?Q_CHL=preview&Q_SurveyVersionID=current}{Link}}
+\vspace{.5cm}
+
+\tableofcontents
+\clearpage
+
+This document reports summary statistics from the "Pre-Survey of Physicians." The survey was conducted on September 23, 2025, and targeted 250 primary care physicians and 250 specialists. On the first two days, we registered 5 completed responses. 
+
+\clearpage
+
+\section{Survey Deployment Tracking}
+
+\begin{table}[H]
+    \centering
+    \caption{Survey Deployment Schedule: Initial and Reminder Emails}
+    \begin{adjustbox}{width=1\linewidth} 
+    \begin{tabular}{lccccccccccc} \toprule {Batch}&\shortstack{Specialty \\ type}&\shortstack{Number of \\ recipients}& \multicolumn{3}{c}{Initial email} & \multicolumn{3}{c}{Reminder email 1} & \multicolumn{3}{c}{Reminder email 2}  \\  \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12}  
+    \input{Pre-Survey/tables/deployment_dates}
+    \end{tabular}
+    \end{adjustbox}
+    \label{tab:email_delivery}
+          {\parbox{1\linewidth}{           %notes
+		\scriptsize{{{ \textit{Notes:} A random sample of 1,000 primary care physicians, 1,000 specialists, and 200 emergency medicine physicians was assigned to different deployment schedules. The initial invitation and two reminder emails will be sent at varying dates and times according to this schedule. Assignment to schedules was randomized using uniform randomization.}}}}}
+\end{table}
+
+% \begin{table}[H]
+%     \centering
+%     \caption{Daily Tracking of Survey Responses}
+%     \begin{adjustbox}{width=1\linewidth} 
+%     \input{Pre-Survey/tables/initial_email_tracking_PC_SP_24sep2025_1015am_pt}
+%     \end{adjustbox}
+%     \label{tab:montly_kits}
+%           {\parbox{1\linewidth}{           %notes
+% 		\scriptsize{{{ \textit{Notes:} Counts are based on initial email recipients per batch. Email opened includes recipients who opened the email or started the survey; hard and soft bounces follow system status codes. Survey started includes any partial/expired attempts, and survey finished indicates completed surveys. All rates are calculated relative to batch recipients.}}}}}
+% \end{table}
+
+% \begin{table}[H]
+%     \centering
+%     \caption{Daily Tracking of Participant Compensation}
+%     \begin{adjustbox}{width=0.75\linewidth} 
+%     \input{Pre-Survey/tables/gift_card_tracking_PC_SP_24sep2025_1015am_pt}
+%     \end{adjustbox}
+%     \label{tab:email_delivery}
+%           {\parbox{1\linewidth}{           %notes
+% 		\scriptsize{{{ \textit{Notes:} Gift card distributions were processed through Tremendous. Counts are based on the number of recipients per batch. Compensation reflects the amount allocated per participant, with the total amount representing the full value disbursed for that batch. The updated balance reflects remaining funds after distribution.}}}}}
+% \end{table}
+
+\section{Completion Check}
+
+%\input{completion_check_table.tex}
+% tot participants, screend aout, innatentive, attrition, duration in  min (max, min and evr.)
+%duplicated IP address
+
+\begin{table}[H]
+    \centering
+    \caption{Survey Participation}
+\input{Pre-Survey/tables/completioncheck}
+     \parbox{.9\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table provides an overview of survey participation. It outlines the initial survey participation numbers, including details on participants screened out, inattentive, and those who attrited.}}}}
+    \label{tab:completioncheck}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\caption{Histogram duration (in minutes)}
+	\label{fig:hist_duration}
+	\begin{adjustbox}{max width=\textwidth}
+		\includegraphics{Pre-Survey/figures/hist_duration.pdf}
+	\end{adjustbox}
+	\parbox{.9\linewidth}{
+		\vspace{.2cm}
+		\scriptsize{\emph{Notes}: This figure displays a histogram depicting the duration (in minutes) that respondents took to complete the survey. I have omitted an outlier who took 7 hours and 18 minutes to complete the survey.}
+	}
+\end{figure}
+
+\clearpage
+
+\section{Screening}\label{demo}
+
+\begin{table}[H]
+    \centering
+    \caption{Summary Statistics for Screeners}
+    	\begin{adjustbox}{max width=0.8\textwidth}
+\input{Pre-Survey/tables/screeners_table}
+\end{adjustbox}
+     \parbox{.9\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for the overall sample of physicians. The numbers displayed are all shares.}}}}
+    \label{tab:screen_table}
+\end{table}
+
+\clearpage
+
+\section{Demographics}\label{demo}
+
+\begin{table}[H]
+    \centering
+    \caption{Summary Statistics for Demographics}
+              \begin{adjustbox}{width=0.55\linewidth}  
+\input{Pre-Survey/tables/demo_byphystype}
+\end{adjustbox}
+     \parbox{.9\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for the overall sample of physicians. "Share (\%)" indicates the percentage of respondents in each group, and "Total" shows the number of observations used to calculate each percentage.}}}}
+    \label{tab:demo_table}
+\end{table}
+
+\clearpage
+
+\section{Categorization of Medical Fields by Physician Type} 
+
+
+\begin{table}[H]
+    \centering
+    \caption{Categorization of Medical Field among Primary Care Physicians and among Specialists}
+    \begin{adjustbox}{width=0.95\linewidth}  
+    \input{Pre-Survey/tables/medical_fields_categorization_byphystype}
+    \end{adjustbox}
+    \label{tab:med_field_cat_phystype}
+          {\parbox{1\linewidth}{           %notes
+    		\scriptsize{{{ \textit{Notes:} The table displays statistics for the overall sample of physicians. Percentages (\%) indicates the percentage of respondents that select certain medical fields among a physician type. Percentages are calculated row-wise within each physician type, so values across columns for a given medical field sum to 100\% wihtin each physician type.}}}}}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Among Primary Care Physician: Categorization of Medical Field by Physician Type}
+    \begin{adjustbox}{width=0.95\linewidth}    
+    \input{Pre-Survey/tables/medical_fields_categorization_byphystype_PC}
+    \end{adjustbox}
+    \label{tab:med_field_cat_phystype_pc}
+          {\parbox{1\linewidth}{           %notes
+    		\scriptsize{{{ \textit{Notes:} The table displays statistics for sample of primary care physicians. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents. Percentages are calculated row-wise within each physician type, so values across columns for a given medical field sum to 100\%.}}}}}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Among Specialists: Categorization of Medical Field by Physician Type}
+    \begin{adjustbox}{width=0.95\linewidth} 
+    \input{Pre-Survey/tables/medical_fields_categorization_byphystype_SP}
+    \end{adjustbox}
+    \label{tab:med_field_cat_phystype_sp}
+          {\parbox{1\linewidth}{           %notes
+    		\scriptsize{{{ \textit{Notes:} The table displays statistics for the sample of specialists. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group. Percentages are calculated row-wise, so values across columns for a given medical field sum to 100\%.}}}}}
+\end{table}
+
+
+\section{Categorization of Medical Fields by Financial Motivation} 
+
+\begin{table}[H]
+    \centering
+    \caption{Categorization of Medical Specialties by Financial Motivation Among Primary Care Physicians and Specialists}
+    \begin{adjustbox}{width=0.95\linewidth} 
+    \input{Pre-Survey/tables/medical_fields_categorization_by_finan_motiv}
+    \end{adjustbox}
+    \label{tab:med_field_cat_finmov}
+          {\parbox{1\linewidth}{           %notes
+		\scriptsize{{{ \textit{Notes:} The table reports the distribution of medical specialties ranked among the top 5 and bottom 5 fields in terms of financial motivation. Percentage (\%) shows the share of placements relative to the total number of top (or bottom) 5 selections. Percentages within each column sum to 100\%.}}}}}
+\end{table}
+\begin{comment}
+    
+\begin{table}[H]
+    \centering
+    \caption{Among Primary Care Physicians: Categorization of Medical Specialties by Financial Motivation (Top 5 vs. Bottom 5)}
+    \begin{adjustbox}{width=0.45\linewidth} 
+    \input{Pre-Survey/tables/medical_fields_categorization_by_finan_motiv_PC}
+    \end{adjustbox}
+    \label{tab:med_field_cat_finmov_pc}
+          {\parbox{1\linewidth}{           %notes
+		\scriptsize{{{ \textit{Notes:} The table reports the distribution of medical specialties ranked among the top 5 and bottom 5 fields in terms of financial motivation. “Total” indicates the number of times each specialty was placed in the respective category across all respondents. “Percentage (\%)” shows the share of these placements relative to the total number of top (or bottom) 5 selections. Percentages within each column sum to 100\%.}}}}}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Among Specialists: Categorization of Medical Specialties by Financial Motivation (Top 5 vs. Bottom 5)}
+    \begin{adjustbox}{width=0.55\linewidth} 
+    \input{Pre-Survey/tables/medical_fields_categorization_by_finan_motiv_SP}
+    \end{adjustbox}
+    \label{tab:med_field_cat_finmov_sp}
+          {\parbox{1\linewidth}{           %notes
+		\scriptsize{{{ \textit{Notes:} The table reports the distribution of medical specialties ranked among the top 5 and bottom 5 fields in terms of financial motivation. “Total” indicates the number of times each specialty was placed in the respective category across all respondents. “Percentage (\%)” shows the share of these placements relative to the total number of top (or bottom) 5 selections. Percentages within each column sum to 100\%.}}}}}
+\end{table}
+\end{comment}
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Among Primary Care Physicians: Categorization of Medical Specialties by Financial Motivation}
+       \begin{subfigure}{0.45\textwidth}
+        \caption{Top 5}
+    \begin{adjustbox}{width=1\linewidth}  
+    \includegraphics[width=1\linewidth]{Pre-Survey/figures/fin_motive_top_share_PC.pdf}
+\end{adjustbox}
+    \end{subfigure}
+            \begin{subfigure}{0.45\textwidth}
+        \caption{Bottom 5}
+    \begin{adjustbox}{width=1\linewidth}  
+    \includegraphics[width=1\linewidth]{Pre-Survey/figures/fin_motive_bottom_share_PC.pdf}
+\end{adjustbox}
+    \end{subfigure}
+    \label{fig:top_bottom_pc}
+     {\parbox{\linewidth}{           %notes
+		\scriptsize{{{ \textit{Notes:} Notes: The figure displays the medical specialties cited by primary care physicians as most (Top 5) and least (Bottom 5) financially motivated. Percentages represent the share of all selections within each category (Top 5 or Bottom 5). Respondents could select up to five specialties per category. Panel (a) reports the five specialties with the largest Top-5 shares; Panel (b) reports the five with the largest Bottom-5 shares}}}}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Among Specialists: Categorization of Medical Specialties by Financial Motivation }
+ \begin{subfigure}{0.45\textwidth}
+        \caption{Top 5}
+    \begin{adjustbox}{width=1\linewidth}  
+    \includegraphics[width=1\linewidth]{Pre-Survey/figures/fin_motive_top_share_SP.pdf}
+\end{adjustbox}
+    \end{subfigure}
+            \begin{subfigure}{0.45\textwidth}
+        \caption{Bottom 5}
+    \begin{adjustbox}{width=1\linewidth}  
+    \includegraphics[width=1\linewidth]{Pre-Survey/figures/fin_motive_bottom_share_SP.pdf}
+\end{adjustbox}
+    \end{subfigure}
+    \label{fig:top_bottom_sp}
+     {\parbox{\linewidth}{           %notes
+		\scriptsize{{{ \textit{Notes:} Notes: The figure displays the medical specialties cited by specialists as most (Top 5) and least (Bottom 5) financially motivated. Percentages represent the share of all selections within each category (Top 5 or Bottom 5) and therefore sum to 100\% within each panel. Respondents could select up to five specialties per category. Panel (a) reports the five specialties with the largest Top-5 shares; Panel (b) reports the five with the largest Bottom-5 shares}}}}}
+\end{figure}
+
+\section{Categorization of Belief Questions} 
+
+\begin{table}[H]
+    \centering
+    \caption{Categorization of Belief Questions}
+        \begin{adjustbox}{width=0.95\linewidth} 
+\input{Pre-Survey/tables/beliefs_categorization_byphystype}
+\end{adjustbox}
+     \parbox{\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for the overall sample of physicians. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group.}}}}
+    \label{tab:ai_table}
+\end{table}
+
+%\begin{figure}[H]
+%	\centering
+%	\caption{Categorization of Belief Questions}
+%	\label{fig:cat_belief}
+%	\begin{adjustbox}{max width=\textwidth}
+%		\includegraphics{Pre-Survey/figures/cat_statements_outtype.pdf}
+%	\end{adjustbox}
+%	\parbox{.9\linewidth}{
+%		\vspace{.2cm}
+%		\scriptsize{\emph{Notes}: The figure displays the categorization of belief statements about unionization across four categories: personal physician benefits, patient benefits, cannot categorize, and other. Percentages represent the share of total categorizations for each statement, and values across categories for a given statement sum to 100\%.}
+%	}
+%\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Categorization of Belief Questions by Physician Type}
+       \begin{subfigure}{0.8\textwidth}
+        \caption{Among Primary Care Physicians}
+    \begin{adjustbox}{width=1\linewidth}  
+    \includegraphics[width=1\linewidth]{Pre-Survey/figures/cat_statements_outtype_PC.pdf}
+\end{adjustbox}
+    \end{subfigure}
+    \\
+        \begin{subfigure}{0.8\textwidth}
+        \caption{Among Specialists}
+    \begin{adjustbox}{width=1\linewidth}  
+    \includegraphics[width=1\linewidth]{Pre-Survey/figures/cat_statements_outtype_SP.pdf}
+\end{adjustbox}
+    \end{subfigure}
+    \label{fig:distributed}
+     {\parbox{\linewidth}{           %notes
+		\scriptsize{{{ \textit{Notes:} The figure displays the categorization of belief statements about unionization across four categories: personal physician benefits, patient benefits, cannot categorize, and other. Percentages represent the share of total categorizations for each statement, and values across categories for a given statement sum to 100\%. Panel (a) and Panel (b) show the plots for primary care physicians and specialists, respectively.}}}}}
+\end{figure}
+
+\clearpage
+
+\section{Views on Physicians' Unionization} 
+
+\begin{table}[H]
+    \centering
+    \caption{Views on Physicians' Unionization}
+        \begin{adjustbox}{width=1\linewidth} 
+\input{Pre-Survey/tables/sec_stage}
+\end{adjustbox}
+     \parbox{\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for the overall sample of physicians. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group. }}}}
+    \label{tab:ai_table}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\caption{Views on Physicians' Unionization}
+	\label{fig:cat_belief}
+	\begin{adjustbox}{width=0.85\textwidth}
+		\includegraphics{Pre-Survey/figures/sec_stage_byphystype.pdf}
+	\end{adjustbox}
+	\parbox{.9\linewidth}{
+		\vspace{.2cm}
+		\scriptsize{\emph{Notes}: The figure reports the share of primary care physicians and specialists who agreed with each statement.}
+	}
+\end{figure}
+
+
+\clearpage
+
+\section{Real Stakes}
+
+\begin{table}[H]
+    \centering
+    \caption{Real Stakes}
+        \begin{adjustbox}{width=0.75\linewidth} 
+\input{Pre-Survey/tables/stakes}
+\end{adjustbox}
+     \parbox{\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}:The table displays statistics for the overall sample of physicians. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group.}}}}
+    \label{tab:stakes_table}
+\end{table}
+
+\clearpage
+
+\section{Feedback}
+
+\begin{table}[H]
+    \centering
+    \caption{Feedback}
+        \begin{adjustbox}{width=0.45\linewidth}  
+\input{Pre-Survey/tables/feedback}
+\end{adjustbox}
+     \parbox{\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for the overall sample of physicians. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group.}}}}
+    \label{tab:ai_table}
+\end{table}
+
+\clearpage
+
+\section{Open text} 
+
+\subsection{Categorization of belief questions}
+
+
+    \begin{itemize}
+        \item \href{https://www.dropbox.com/scl/fi/x5nio65ohv7o42dk6sc4i/feedback_belief_questions.csv?rlkey=cxxseve65x52cfwgaqtiqsoqa&dl=0}{Do you have any feedback on these questions?}
+        \item \href{https://www.dropbox.com/scl/fi/unuuezlgufxpxlz3sxysk/open_text_other_beliefs.csv?rlkey=lioi0nr74mga9ylyxm0fjhlbk&dl=0}{Please list up to three additional changes you anticipate a physicians’ union could bring to your workplace that were not mentioned above. Start with the one you consider most important.}
+    \end{itemize}
+
+\subsection{Views on Physician Unionization}
+
+    \begin{itemize}
+        \item \href{https://www.dropbox.com/scl/fi/7l946s8rsn3pz3ay3ngr9/open_text_union_join.csv?rlkey=qoo5pf8flkn84kworsynjg04s&dl=0}{Open text: To what extent do you agree or disagree with the following statement ``If there was a physicians’ union at my workplace, I would join it.''}
+        \item \href{https://www.dropbox.com/scl/fi/n2hpphm5tddg6sma346gd/open_text_union_rec_prob.csv?rlkey=oykwwwy15xkis5lvbs8k2egbh&dl=0}{Open text: To what extent do you agree or disagree with the following statement ``I would be more likely to recommend a career in medicine if physicians were unionized.''}
+        \item \href{https://www.dropbox.com/scl/fi/fencs6zg509nr4s1vi2mf/open_text_union_plans.csv?rlkey=96ore8pdjvjsphxajimymd0ae&dl=0}{Open text: To what extent do you agree or disagree with the following statement ``I would be more likely to stay in my current job if physicians were unionized.''}
+    \end{itemize}
+
+    
+\subsection{Survey Feedback}
+
+    \begin{itemize}
+        \item \href{https://www.dropbox.com/scl/fi/sygw2qcnhu6lxjr7p7cl8/open_text_survey_feedback.csv?rlkey=gwzrqoluii5eecgb56vm52jp5&dl=0}{Do you have any feedback on this survey?}
+        \item \href{https://www.dropbox.com/scl/fi/63m9mx1qkhc6r95838idl/open_text_survey_purpose.csv?rlkey=03ila2825gpvtx0q3lhb406pd&dl=0}{Please provide us with your impression of the survey’s purpose.}
+        \item \href{https://www.dropbox.com/scl/fi/ekae24vyahmeddiydrsh6/open_text_confusing_questions.csv?rlkey=fr8oiwpg6ww70cpkrt44fimnt&dl=0}{For responders who replied ``Yes'': Did you find any part or question in the survey unclear or confusing? }
+        \href{https://www.dropbox.com/scl/fi/jzzi5srfjrdm8gzk779j8/open_text_add_comments.csv?rlkey=sa5sgk8u70xxtxd4n65bc3sjz&dl=0}{Anything else you would like to share?}
+    \end{itemize}
+
+    \clearpage
+\appendix
+
+\section{Appendix}
+
+\subsection{Contact List Currently Available}
+
+\begin{table}[H]
+    \centering
+    \caption{Distribution of Physician Specialties by Provider Type (REDI Data, N = 99,488)}
+    	\begin{adjustbox}{max width=0.8\textwidth}
+\input{Pre-Survey/tables/spec_byphystype_redi_data_09022025}
+\end{adjustbox}
+     \parbox{.9\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table presents statistics for primary care physicians, specialists, ER, and the full sample. “Share (\%)” indicates the proportion of respondents in each specialty, while “Total” shows the corresponding number of physicians.}}}}
+    \label{tab:spec_table}
+\end{table}
+
+\subsection{Sanity Checks on Random Sampling}\label{sanity}
+
+\begin{table}[H]
+    \centering
+    \caption{Population and Sample Shares of Primary Care Physicians and Specialists by Medical Field}
+              \begin{adjustbox}{width=0.85\linewidth}  
+\input{Pre-Survey/tables/spec_byphystype_sanity_check_08272025}
+\end{adjustbox}
+     \parbox{.9\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table shows statistics for the population and the random sample for each group: primary care physicians and specialists. "Share (\%)" indicates the percentage of respondents in each group, and "Total" shows the number of observations used to calculate each percentage.}}}}
+    \label{tab:sanity_spec}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Population and Sample Shares of Primary Care Physicians and Specialists by Region}
+              \begin{adjustbox}{width=0.65\linewidth}  
+\input{Pre-Survey/tables/geo_byphystype_sanity_check_08272025}
+\end{adjustbox}
+     \parbox{.9\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table shows statistics for the population and the random sample for each group: primary care physicians and specialists. "Share (\%)" indicates the percentage of respondents in each group, and "Total" shows the number of observations used to calculate each percentage.}}}}
+    \label{tab:sanity_geo}
+\end{table}
+
+
+
+%\singlespace
+%\bibliography{biblio}
+
+\end{document}
+
+\section{Results for ER}
+
+\subsection{Demographics}
+
+\begin{table}[H]
+    \centering
+    \caption{Summary Statistics for Demographics of ER Doctors}
+              \begin{adjustbox}{width=0.55\linewidth}  
+\input{Pre-Survey/tables/demo_byphystype}
+\end{adjustbox}
+     \parbox{.9\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for the overall sample of physicians. "Share (\%)" indicates the percentage of respondents in each group, and "Total" shows the number of observations used to calculate each percentage.}}}}
+    \label{tab:demo_table}
+\end{table}
+
+\subsection{Categorization of Medical Fields among ER doctors}
+
+\begin{table}[H]
+    \centering
+    \caption{Among ER Doctors: Categorization of Medical Field by Physician Types}
+    \begin{adjustbox}{width=0.75\linewidth} 
+    \begin{tabular}{lccccccc}\toprule 
+    & \multicolumn{2}{c}{Primary Care Physician} & \multicolumn{2}{c}{Specialist} & \multicolumn{2}{c}{Difficult to classify} & {All groups} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}  
+    \input{Pre-Survey/tables/medical_fields_categorization_byphystype_ER}
+    \end{tabular}
+    \end{adjustbox}
+    \label{tab:med_field_cat_phystype}
+          {\parbox{1\linewidth}{           %notes
+    		\scriptsize{{{ \textit{Notes:} The table displays statistics for the sample of ER doctors. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group. Percentages are calculated row-wise, so values across columns for a given medical field sum to 100\%.}}}}}
+\end{table}
+
+\subsection{Categorization of Medical Fields by Financial Motivation among ER Doctors}
+
+\begin{table}[H]
+    \centering
+    \caption{Categorization of Medical Specialties by Financial Motivation (Top 5 vs. Bottom 5)}
+    \begin{adjustbox}{width=0.55\linewidth} 
+    \begin{tabular}{lcccc}\toprule & \multicolumn{2}{c}{Top 5} & \multicolumn{2}{c}{Bottom 5} \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} 
+    \input{Pre-Survey/tables/medical_fields_categorization_by_finan_motiv_ER}
+    \end{tabular}
+    \end{adjustbox}
+    \label{tab:med_field_cat_finmov}
+          {\parbox{1\linewidth}{           %notes
+		\scriptsize{{{ \textit{Notes:} The table reports the distribution of medical specialties ranked among the top 5 and bottom 5 fields in terms of financial motivation. “Total” indicates the number of times each specialty was placed in the respective category across all respondents. “Percentage (\%)” shows the share of these placements relative to the total number of top (or bottom) 5 selections. Percentages within each column sum to 100\%.}}}}}
+\end{table}
+
+
+\subsection{Categorization of Belief Questions} 
+
+\begin{table}[H]
+    \centering
+    \caption{Categorization of Belief Questions}
+        \begin{adjustbox}{width=0.95\linewidth} 
+    \begin{tabular}{lcccccccc}\toprule & \multicolumn{2}{c}{Personal Physician benefits} & \multicolumn{2}{c}{Patient benefits} & \multicolumn{2}{c}{Can't categorize} & \multicolumn{2}{c}{Other (please specify)} \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} 
+\input{Pre-Survey/tables/cat_statements_outtype_ER}
+    \end{tabular}
+\end{adjustbox}
+     \parbox{\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for the sample of ER doctors. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group.}}}}
+    \label{tab:ai_table}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\caption{Categorization of Belief Questions}
+	\label{fig:cat_belief}
+	\begin{adjustbox}{max width=\textwidth}
+		\includegraphics{Pre-Survey/figures/cat_statements_outtype_ER.pdf}
+	\end{adjustbox}
+	\parbox{.9\linewidth}{
+		\vspace{.2cm}
+		\scriptsize{\emph{Notes}: The figure displays the categorization of belief statements about unionization across four categories: personal physician benefits, patient benefits, cannot categorize, and other. Percentages represent the share of total categorizations for each statement, and values across categories for a given statement sum to 100\%.}
+	}
+\end{figure}
+
+
+
+\subsection{Views on Physicians' Unionization} 
+
+\begin{table}[H]
+    \centering
+    \caption{Views on Physicians' Unionization}
+        \begin{adjustbox}{width=1\linewidth} 
+\input{Pre-Survey/tables/sec_stage_ER}
+\end{adjustbox}
+     \parbox{\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for the sample of ER doctors. "Total" shows the number of observations used to calculate each percentage, and "Percentages (\%)" indicates the percentage of respondents in each group. }}}}
+    \label{tab:ai_table}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\caption{Views on Physicians' Unionization}
+	\label{fig:cat_belief}
+	\begin{adjustbox}{width=0.85\textwidth}
+		\includegraphics{Pre-Survey/figures/sec_stage_byphystype_ER.pdf}
+	\end{adjustbox}
+	\parbox{.7\linewidth}{
+		\vspace{.2cm}
+		\scriptsize{\emph{Notes}: The figure reports the share of ER doctors who agreed with each statement.}
+	}
+\end{figure}
+
+
+
+
+\begin{comment}    
+\begin{table}[H]
+    \centering
+    \caption{COVID-19 Block Before Treatment}
+\input{Phys_main_survey/tables_updated/covid_byphystype_1}
+     \parbox{\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for PC-ER physicians, PC-No ER physicians, specialists, and the overall sample.}}}}
+    \label{tab:ai_table}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{COVID-19 Block After Treatment}
+\input{Phys_main_survey/tables_updated/covid_byphystype_0}
+     \parbox{\linewidth}{
+        	\vspace{.2cm}
+        		\scriptsize{\scriptsize{{\emph{Notes}: The table displays statistics for PC-ER physicians, PC-No ER physicians, specialists, and the overall sample.}}}}
+    \label{tab:ai_table}
+\end{table}
+\end{comment}
